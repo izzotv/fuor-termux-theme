@@ -1,0 +1,170 @@
+format = """[](fg:#bb9af7 bg:#1f2335)\
+$os\
+[](fg:#7dcfff bg:#bb9af7)\
+$username\
+[](fg:#7aa2f7 bg:#7dcfff)\
+$hostname\
+[](fg:#9ece6a bg:#7aa2f7)\
+$directory\
+[](fg:#e0af68 bg:#9ece6a)\
+$git_branch\
+[](fg:#ff9e64 bg:#e0af68)\
+$git_status\
+[](fg:#1f2335 bg:#ff9e64)\
+$time\
+$rust$nodejs$golang$python$c$cpp$java$php$ruby$swift$kotlin$lua$perl$haskell$elixir\
+$docker_context$kubernetes$aws$gcloud$terraform\
+[](fg:#1f2335 bg:#7aa2f7)\
+$line_break\
+$character"""
+
+# ─── الهوية ───
+[os]
+disabled = false
+style = "fg:#1f2335 bg:#bb9af7 bold"
+format = "[  ]($style)"
+[os.symbols]
+Android = "[  ](fg:#1f2335 bg:#bb9af7 bold)"
+
+[username]
+style_user = "fg:#1f2335 bg:#7dcfff bold"
+style_root = "fg:#1f2335 bg:#f7768e bold"
+format = "[  $user ]($style)"
+show_always = true
+
+[hostname]
+ssh_only = false
+style = "fg:#1f2335 bg:#7aa2f7 bold"
+format = "[  ]($style)"
+
+[directory]
+style = "fg:#1f2335 bg:#9ece6a bold"
+format = "[  $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+style = "fg:#1f2335 bg:#e0af68 bold"
+format = "[  $branch ]($style)"
+
+[git_status]
+style = "fg:#1f2335 bg:#ff9e64 bold"
+format = "[$all_status$ahead_behind ]($style)"
+
+[time]
+disabled = false
+time_format = "%l:%M %p"
+style = "fg:#c0caf5 bg:#1f2335 bold"
+format = "[ $time ]($style)"
+
+[character]
+success_symbol = "[❯](bold #7aa2f7)"
+error_symbol = "[❯](bold #f7768e)"
+
+# ─── لغات البرمجة ───
+[nodejs]
+style = "fg:#1f2335 bg:#9ece6a bold"
+format = "[  ]($style)"
+detect_files = ["package.json", ".nvmrc"]
+detect_folders = ["node_modules"]
+
+[python]
+style = "fg:#1f2335 bg:#7aa2f7 bold"
+format = "[  ]($style)"
+detect_extensions = ["py"]
+detect_files = ["requirements.txt", "pyproject.toml", "setup.py"]
+
+[golang]
+style = "fg:#1f2335 bg:#7dcfff bold"
+format = "[  ]($style)"
+detect_extensions = ["go"]
+detect_files = ["go.mod", "go.sum"]
+
+[c]
+style = "fg:#1f2335 bg:#7aa2f7 bold"
+format = "[  ]($style)"
+detect_extensions = ["c", "h"]
+
+[cpp]
+style = "fg:#1f2335 bg:#7aa2f7 bold"
+format = "[  ]($style)"
+detect_extensions = ["cpp", "cc", "cxx", "hpp"]
+
+[rust]
+style = "fg:#1f2335 bg:#ff9e64 bold"
+format = "[  ]($style)"
+detect_extensions = ["rs"]
+detect_files = ["Cargo.toml"]
+
+[java]
+style = "fg:#1f2335 bg:#ff9e64 bold"
+format = "[  ]($style)"
+detect_extensions = ["java", "class", "jar"]
+detect_files = ["pom.xml", "build.gradle"]
+
+[php]
+style = "fg:#1f2335 bg:#bb9af7 bold"
+format = "[  ]($style)"
+detect_extensions = ["php"]
+detect_files = ["composer.json"]
+
+[ruby]
+style = "fg:#1f2335 bg:#f7768e bold"
+format = "[  ]($style)"
+detect_extensions = ["rb"]
+detect_files = ["Gemfile"]
+
+[swift]
+style = "fg:#1f2335 bg:#ff9e64 bold"
+format = "[  ]($style)"
+detect_extensions = ["swift"]
+
+[kotlin]
+style = "fg:#1f2335 bg:#bb9af7 bold"
+format = "[  ]($style)"
+detect_extensions = ["kt", "kts"]
+
+[lua]
+style = "fg:#1f2335 bg:#7aa2f7 bold"
+format = "[  ]($style)"
+detect_extensions = ["lua"]
+
+[perl]
+style = "fg:#1f2335 bg:#7dcfff bold"
+format = "[  ]($style)"
+detect_extensions = ["pl", "pm"]
+
+[haskell]
+style = "fg:#1f2335 bg:#bb9af7 bold"
+format = "[  ]($style)"
+detect_extensions = ["hs"]
+
+[elixir]
+style = "fg:#1f2335 bg:#bb9af7 bold"
+format = "[  ]($style)"
+detect_extensions = ["ex", "exs"]
+
+# ─── منصات ───
+[docker_context]
+style = "fg:#1f2335 bg:#7aa2f7 bold"
+format = "[  $context ]($style)"
+
+[kubernetes]
+style = "fg:#1f2335 bg:#7aa2f7 bold"
+format = "[ e $context ]($style)"
+disabled = false
+
+[aws]
+style = "fg:#1f2335 bg:#ff9e64 bold"
+format = "[  $profile ]($style)"
+disabled = false
+
+[gcloud]
+style = "fg:#1f2335 bg:#7aa2f7 bold"
+format = "[  $active ]($style)"
+disabled = false
+
+[terraform]
+style = "fg:#1f2335 bg:#bb9af7 bold"
+format = "[  $workspace ]($style)"
+disabled = false
